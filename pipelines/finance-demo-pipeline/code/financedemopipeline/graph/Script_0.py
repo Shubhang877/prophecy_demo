@@ -8,8 +8,8 @@ from financedemopipeline.udfs.UDFs import *
 
 def Script_0(spark: SparkSession) -> DataFrame:
     import time
-    out0 = spark.sql("SELECT * FROM sample_data.finance.finance_data")
+    out0 = spark.sql("SELECT * FROM lkh_dev.finance.finance_data")
     time.sleep(10)
-    out0 = spark.sql("SELECT * FROM sample_data.finance.finance_data")
+    out0 = spark.sql("SELECT * FROM lkh_dev.finance.finance_data")
 
     return out0

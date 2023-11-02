@@ -6,7 +6,7 @@
     "id" : "1",
     "uri" : "pipelines/finance-demo-pipeline",
     "language" : "python",
-    "fabricId" : "6485",
+    "fabricId" : "6535",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
@@ -117,7 +117,7 @@
         "autoUpdateOnRun" : true
       },
       "properties" : {
-        "script" : "import time\nout0=spark.sql(\"SELECT * FROM sample_data.finance.finance_data\")\ntime.sleep(10)\nout0=spark.sql(\"SELECT * FROM sample_data.finance.finance_data\")",
+        "script" : "import time\nout0=spark.sql(\"SELECT * FROM lkh_dev.finance.finance_data\")\ntime.sleep(10)\nout0=spark.sql(\"SELECT * FROM lkh_dev.finance.finance_data\")",
         "scriptMethodHeader" : "def Script(spark: SparkSession) -> DataFrame:",
         "scriptMethodFooter" : "    return out0"
       }
