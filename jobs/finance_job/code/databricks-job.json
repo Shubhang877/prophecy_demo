@@ -82,9 +82,6 @@
     },
     "access_control_list" : [ {
       "service_principal_name" : "a8fb2550-6031-443b-8ce6-bfb5ce5f9a35",
-      "permission_level" : "CAN_MANAGE"
-    }, {
-      "user_name" : "Shubhang Srivastava",
       "permission_level" : "IS_OWNER"
     } ]
   },
