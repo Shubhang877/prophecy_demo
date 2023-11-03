@@ -7,7 +7,7 @@
     "schedule" : "0 0 14 * * ? *",
     "scheduleTimeZone" : "Asia/Calcutta",
     "jobClusterMode" : {
-      "clusterMode" : "Single"
+      "clusterMode" : "Multi"
     },
     "enabled" : true,
     "defaultClusterSize" : "finance-job-size",
