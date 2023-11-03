@@ -1,0 +1,93 @@
+{
+  "fabric_id" : "6535",
+  "components" : [ {
+    "PipelineComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/finance_demo_pipeline-1.0-py3-none-any.whl",
+      "nodeName" : "finance-demo-pipeline",
+      "id" : "x9-8Ucu5fsVkxfebzCNFb$$xc1tUsvSiZ1tTw-gQGHrT",
+      "language" : "python",
+      "pipelineId" : "pipelines/finance-demo-pipeline"
+    }
+  } ],
+  "request" : {
+    "format" : "MULTI_TASK",
+    "name" : "finance_job",
+    "job_clusters" : [ {
+      "job_cluster_key" : "finance_job_default_finance-job-size",
+      "new_cluster" : {
+        "spark_version" : "13.3.x-scala2.12",
+        "node_type_id" : "m6i.large",
+        "driver_node_type_id" : "m5d.large",
+        "autoscale" : {
+          "min_workers" : 1,
+          "max_workers" : 1
+        },
+        "custom_tags" : { },
+        "enable_elastic_disk" : true,
+        "spark_conf" : {
+          "spark.prophecy.metadata.fabric.id" : "6535",
+          "spark.prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/finance_job",
+          "spark.prophecy.metadata.is.interactive.run" : "false",
+          "spark.prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
+          "spark.prophecy.metadata.user.id" : 4176,
+          "spark.prophecy.execution.service.url" : "wss://execution.dp.app.prophecy.io/eventws",
+          "spark.prophecy.packages.path" : "{\"pipelines/finance-demo-pipeline\":\"dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/finance_demo_pipeline-1.0-py3-none-any.whl\"}",
+          "spark.prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
+          "spark.prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
+          "spark.prophecy.execution.metrics.disabled" : false
+        },
+        "cluster_source" : "API",
+        "runtime_engine" : "PHOTON",
+        "aws_attributes" : {
+          "first_on_demand" : 2,
+          "availability" : "SPOT_WITH_FALLBACK",
+          "zone_id" : "auto",
+          "spot_bid_price_percent" : 100,
+          "ebs_volume_count" : 1,
+          "ebs_volume_type" : "GENERAL_PURPOSE_SSD",
+          "ebs_volume_size" : 100
+        },
+        "data_security_mode" : "USER_ISOLATION",
+        "enable_local_disk_encryption" : false
+      }
+    } ],
+    "email_notifications" : { },
+    "tasks" : [ {
+      "task_key" : "finance-demo-pipeline",
+      "job_cluster_key" : "finance_job_default_finance-job-size",
+      "python_wheel_task" : {
+        "package_name" : "finance_demo_pipeline",
+        "entry_point" : "main",
+        "parameters" : [ "-i", "default", "-O", "{}" ]
+      },
+      "libraries" : [ {
+        "maven" : {
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.4.0-7.1.25"
+        }
+      }, {
+        "pypi" : {
+          "package" : "prophecy-libs==1.6.9"
+        }
+      }, {
+        "whl" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/finance_demo_pipeline-1.0-py3-none-any.whl"
+      } ],
+      "email_notifications" : { },
+      "max_retries" : 0
+    } ],
+    "max_concurrent_runs" : 1,
+    "schedule" : {
+      "quartz_cron_expression" : "0 0 14 * * ? *",
+      "timezone_id" : "UTC",
+      "pause_status" : "PAUSED"
+    },
+    "access_control_list" : [ {
+      "service_principal_name" : "a8fb2550-6031-443b-8ce6-bfb5ce5f9a35",
+      "permission_level" : "CAN_MANAGE"
+    } ]
+  },
+  "cluster_mode" : {
+    "clusterMode" : "Single"
+  },
+  "secret_scope" : "prophecy_jobs_6095",
+  "sorted_processes" : [ "x9-8Ucu5fsVkxfebzCNFb$$xc1tUsvSiZ1tTw-gQGHrT" ]
+}

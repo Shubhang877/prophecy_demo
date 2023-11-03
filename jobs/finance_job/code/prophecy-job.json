@@ -1,0 +1,93 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "6535",
+    "jobId" : "jobs/finance_job",
+    "name" : "finance_job",
+    "schedule" : "0 0 14 * * ? *",
+    "scheduleTimeZone" : "UTC",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : false,
+    "defaultClusterSize" : "finance-job-size",
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "type" : "Inherited",
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      }
+    },
+    "availableFabrics" : [ {
+      "id" : "6535",
+      "name" : "dev",
+      "clusterSizes" : {
+        "default" : "finance-job-size",
+        "availableClusterSizes" : [ "finance-job-size" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    } ],
+    "accessControlList" : [ {
+      "servicePrincipalName" : "a8fb2550-6031-443b-8ce6-bfb5ce5f9a35",
+      "permissionLevel" : "CAN_MANAGE"
+    } ]
+  },
+  "processes" : {
+    "x9-8Ucu5fsVkxfebzCNFb$$xc1tUsvSiZ1tTw-gQGHrT" : {
+      "id" : "x9-8Ucu5fsVkxfebzCNFb$$xc1tUsvSiZ1tTw-gQGHrT",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "finance-demo-pipeline",
+        "slug" : "finance_demo_pipeline",
+        "x" : 600.5999755859375,
+        "y" : 193
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Z0Faseg733nfJT8rava7L$$6muYcwMDvEsgivhhALsdw",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "-okdDg4rZPajf3M2nt8bY$$B1VvF0KbgQjluh2dcjaFy",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/finance-demo-pipeline",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "finance_demo_project" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    }
+  },
+  "connections" : [ ]
+}
