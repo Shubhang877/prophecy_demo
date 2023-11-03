@@ -5,11 +5,11 @@
     "jobId" : "jobs/finance_job",
     "name" : "finance_job",
     "schedule" : "0 0 14 * * ? *",
-    "scheduleTimeZone" : "UTC",
+    "scheduleTimeZone" : "Asia/Calcutta",
     "jobClusterMode" : {
       "clusterMode" : "Single"
     },
-    "enabled" : false,
+    "enabled" : true,
     "defaultClusterSize" : "finance-job-size",
     "alerting" : {
       "emails" : "",
@@ -45,6 +45,9 @@
     "accessControlList" : [ {
       "servicePrincipalName" : "a8fb2550-6031-443b-8ce6-bfb5ce5f9a35",
       "permissionLevel" : "CAN_MANAGE"
+    }, {
+      "userName" : "Shubhang Srivastava",
+      "permissionLevel" : "IS_OWNER"
     } ]
   },
   "processes" : {

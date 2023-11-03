@@ -77,12 +77,15 @@
     "max_concurrent_runs" : 1,
     "schedule" : {
       "quartz_cron_expression" : "0 0 14 * * ? *",
-      "timezone_id" : "UTC",
-      "pause_status" : "PAUSED"
+      "timezone_id" : "Asia/Calcutta",
+      "pause_status" : "UNPAUSED"
     },
     "access_control_list" : [ {
       "service_principal_name" : "a8fb2550-6031-443b-8ce6-bfb5ce5f9a35",
       "permission_level" : "CAN_MANAGE"
+    }, {
+      "user_name" : "Shubhang Srivastava",
+      "permission_level" : "IS_OWNER"
     } ]
   },
   "cluster_mode" : {
