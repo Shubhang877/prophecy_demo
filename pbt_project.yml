@@ -1,6 +1,6 @@
 name: finance-demo-project
 description: ''
-version: 0.0.1
+version: '1.0'
 author: shubhang3000@outlook.com
 language: python
 buildSystem: ''
